@@ -3,7 +3,7 @@ import gym
 
 from rl_agents.agents.simple.random import RandomUniformAgent
 from rl_agents.trainer.evaluation import Evaluation
-
+ 
 
 def test_evaluation(tmpdir):
     env = gym.make('CartPole-v0')
