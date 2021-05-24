@@ -47,7 +47,9 @@ class EpsilonGreedy(DiscreteDistribution):
         #    np.exp(- self.time / self.config['tau'])
         if self.writer:
             self.writer.add_scalar('exploration/epsilon', self.epsilon, self.time)
-
+        
+        
+        print("mkas: disable exploration");
     def step_time(self):
         self.time += 1
 
