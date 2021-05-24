@@ -41,15 +41,12 @@ class EpsilonGreedy(DiscreteDistribution):
         :param step_time: whether to update epsilon schedule
         """
         self.optimal_action = np.argmax(values)
-        self.epsilon = 0 #mkas disable 
-        #self.config['final_temperature'] + \
-        #    (self.config['temperature'] - self.config['final_temperature']) * \
-        #    np.exp(- self.time / self.config['tau'])
+        self.epsilon = self.config['final_temperature'] + \
+            (self.config['temperature'] - self.config['final_temperature']) * \
+            np.exp(- self.time / self.config['tau'])
         if self.writer:
             self.writer.add_scalar('exploration/epsilon', self.epsilon, self.time)
-        
-        
-        print("mkas: disable exploration");
+
     def step_time(self):
         self.time += 1
 
